@@ -74,7 +74,7 @@ class Connector {
 	 * @param  bool   $connect
 	 * @return \Robbo\DbConnector\ConnectorInterface
 	 */
-	public static function createConnector(array $config, $connect = false)
+	public static function create(array $config, $connect = false)
 	{
 		if ( ! isset($config['driver']))
 		{
