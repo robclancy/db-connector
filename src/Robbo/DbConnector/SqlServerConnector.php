@@ -1,4 +1,4 @@
-<?php namespace Illuminate\Database\Connectors;
+<?php namespace Robbo\DbConnector;
 
 use PDO;
 

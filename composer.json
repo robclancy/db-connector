@@ -1,36 +1,32 @@
 {
-    "name": "illuminate/database",
-    "description": "An elegant database abstraction library.",
-    "keywords": ["laravel", "database", "sql", "orm"],
+    "name": "robclancy/db-connector",
+    "description": "",
+    "keywords": ["database", "sql"],
     "authors": [
         {
             "name": "Taylor Otwell",
             "email": "taylorotwell@gmail.com"
+        },
+        {
+            "name": "Robert Clancy",
+            "email": "mail@robertclancy.net"
         }
     ],
     "require": {
         "php": ">=5.3.0",
-        "illuminate/container": "4.0.x",
-        "illuminate/events": "4.0.x",
-        "illuminate/support": "4.0.x"
     },
     "require-dev": {
-        "illuminate/console": "4.0.x",
-        "illuminate/filesystem": "4.0.x",
-        "illuminate/pagination": "4.0.x",
-        "illuminate/support": "4.0.x",
         "mockery/mockery": "0.7.2",
         "phpunit/phpunit": "3.7.*"
     },
     "autoload": {
         "psr-0": {
-            "Illuminate\\Database": ""
+            "Robbo\\DbConnector": "src/"
         }
     },
-    "target-dir": "Illuminate/Database",
     "extra": {
         "branch-alias": {
-            "dev-master": "4.0-dev"
+            "dev-master": "1.0-dev"
         }
     },
     "minimum-stability": "dev"
