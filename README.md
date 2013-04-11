@@ -4,6 +4,14 @@ This package is simply a fork of [http://github.com/illuminate/database](illumin
 
 [![Build Status](https://secure.travis-ci.org/robclancy/db-connector.png)](http://travis-ci.org/robclancy/db-connector)
 
+## Installation
+
+Add the following to the "require" section of your `composer.json` file:
+
+```json
+	"robclancy/db-connector": "1.0.x"
+```
+
 ## Basic Usage
 
 You will need a config array, the following shows what can be used...
