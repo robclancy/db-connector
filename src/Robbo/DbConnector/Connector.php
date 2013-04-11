@@ -71,9 +71,10 @@ class Connector {
 	 * Create a connector instance based on the configuration.
 	 *
 	 * @param  array  $config
+	 * @param  bool   $connect
 	 * @return \Robbo\DbConnector\ConnectorInterface
 	 */
-	public static function createConnector(array $config)
+	public static function createConnector(array $config, $connect = false)
 	{
 		if ( ! isset($config['driver']))
 		{
@@ -82,19 +83,17 @@ class Connector {
 
 		switch ($config['driver'])
 		{
-			case 'mysql':
-				return new MySqlConnector;
+			case 'mysql': 	$connector = new MySqlConnector; 	 break;
 
-			case 'pgsql':
-				return new PostgresConnector;
+			case 'pgsql': 	$connector = new PostgresConnector;  break;
 
-			case 'sqlite':
-				return new SQLiteConnector;
+			case 'sqlite': 	$connector = new SQLiteConnector; 	 break;
 
-			case 'sqlsrv':
-				return new SqlServerConnector;
+			case 'sqlsrv': 	$connector = new SqlServerConnector; break;
+
+			default: throw new \InvalidArgumentException("Unsupported driver [{$config['driver']}");
 		}
 
-		throw new \InvalidArgumentException("Unsupported driver [{$config['driver']}");
+		return $connect ? $connector->connect($config) : $connector;
 	}
 }

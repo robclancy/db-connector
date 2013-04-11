@@ -1,6 +1,8 @@
 # PHP Database Connector
 
-This package is simply a fork of (http://github.com/illuminate/database)[illuminate/database] to just provide the connectors.
+This package is simply a fork of [http://github.com/illuminate/database](illuminate/database) to just provide the connectors.
+
+[![Build Status](https://secure.travis-ci.org/robclancy/db-connector.png)](http://travis-ci.org/robclancy/db-connector)
 
 ## Basic Usage
 
@@ -52,13 +54,14 @@ $connector = new Robbo\DbConnector\MysqlConnector;
 $pdo = $connector->connect($config);
 ```
 
-To make things a little easier and more flexible for applications with that support multiple database types you can use a factory method to connect.
+To make things a little easier and more flexible for applications that support multiple database types you can use a factory method to connect.
 The config stays the same however you add a driver as well. For example...
 
 ```php
 
 $config = array(
 	'driver' 	=> 'mysql', // For other types this is 'pgsql', 'sqlite' or 'sqlsrv'
+	
 	'host'      => 'localhost',
 	'database'  => 'database',
 	'username'  => 'root',
