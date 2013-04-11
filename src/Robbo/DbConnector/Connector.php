@@ -25,9 +25,12 @@ class Connector {
 	 */
 	public function getOptions(array $config)
 	{
-		$options = array_get($config, 'options', array());
+		if ( ! isset($config['options']))
+		{
+			$config['options'] = array();
+		}
 
-		return array_diff_key($this->options, $options) + $options;
+		return array_diff_key($this->options, $config['options']) + $config['options'];
 	}
 
 	/**
@@ -40,11 +43,7 @@ class Connector {
 	 */
 	public function createConnection($dsn, array $config, array $options)
 	{
-		$username = array_get($config, 'username');
-
-		$password = array_get($config, 'password');
-
-		return new PDO($dsn, $username, $password, $options);
+		return new PDO($dsn, $config['username'], $config['password'], $options);
 	}
 
 	/**
